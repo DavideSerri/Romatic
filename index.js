@@ -10,40 +10,65 @@ var config = {
 firebase.initializeApp(config);
 //FINE COLLEGAMENTO AL DATABASE
 //Controllo interruttore luce
-
 var valoreInterruttore;
 
-firebase.database().ref("luci").once("value").then(function (snapshot) {
-    valoreInterruttore = snapshot.val().interruttore;
-
-});
+/*firebase.database().ref("luci").once("value").then(function (snapshot) {
+    setValoreInterruttore(snapshot.val().interruttore);
+    
+});*/
 outputAccensione();
 
 var interruttore = document.getElementById("interruttore");
 interruttore.addEventListener("click", accensione, false);
 
+function getValoreInterruttore() {
+    return valoreInterruttore;
+}
+function setValoreInterruttore(valore) {
+    valoreInterruttore = valore;
+    console.log("val(dentro la funzione) " + valoreInterruttore);
+}
 function outputAccensione() {
-    console.log("valoreaccensione Attivato");
+    
     var visualizzaInterruttore = document.getElementById("visualizzaInterruttore");
-    if (valoreInterruttore == false) {
+
+    firebase.database().ref("luci").once("value").then(function (snapshot) {
+        setValoreInterruttore(snapshot.val().interruttore);
+        if (snapshot.val().interruttore === false) {
+            console.log("valore accensione: false");
+            visualizzaInterruttore.innerHTML = "Luci Spente";
+        } else {
+            console.log("valore accensione: true");
+            visualizzaInterruttore.innerHTML = "Luci Accese";
+        }
+
+    });
+ /*   if (getValoreInterruttore == false) {
+        console.log("valore accensione: false");
         visualizzaInterruttore.innerHTML = "Luci Spente";
     } else {
+        console.log("valore accensione: true");
         visualizzaInterruttore.innerHTML = "Luci Accese";
-    }
+    }*/
 }
 function accensione() {
-    console.log("bottone cliccato")
+    
+    var aggiornamenti = {}
+    
+
     if (valoreInterruttore == false) {
-        console.log("valore false");
-        firebase.database().ref("luci").set({
-            interruttore: true
-        });
+
+        console.log("valore interruttore: false");
+     
+       aggiornamenti['interruttore'] = true;
+       firebase.database().ref("luci").update(aggiornamenti);
+     
         outputAccensione();
     } else {
-        console.log("valore true");
-        firebase.database().ref("luci").set({
-            interruttore: false
-        });
+        console.log("valore interruttore: true");
+
+       aggiornamenti['interruttore'] = false;
+       firebase.database().ref("luci").update(aggiornamenti);
         outputAccensione();
     }
 

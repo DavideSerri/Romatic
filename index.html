@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Welcome to Firebase Hosting</title>
+    <title>Aromatic</title>
     <link rel="stylesheet" href="index.css">
   </head>
   <body>
@@ -10,8 +10,10 @@
     <button type="button" id="interruttore"> Accendi/Spegni luci </button>
     <div id="visualizzaInterruttore">Luci Spente</div> 	
 	<button type="button" id="motore">Accendi/Spegni pompa</button>
-	<div id="visualizzaMotore">Motore Spento</div>
-	
+	<div id="visualizzaMotore">Motore Spento</div>   
+    <div>
+          Luminosita: <input type="text" name="luce" value="" id="luminosita" />
+    </div>
 	
 	
 	
@@ -22,7 +24,9 @@
 	
 	
   <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js" gapi_processed="true"></script> 
-  <script src="script/index.js"></script>
+  <script src="script/index.js"></script> 
   <script src="script/interruttore.js"></script>
+  <script src="script/luminosita.js"></script>
+
   </body>
 </html>

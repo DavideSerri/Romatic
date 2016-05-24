@@ -17,3 +17,22 @@
     left: 20%;	
 	
 }
+
+#motore {
+	
+	text-align: center;
+    position: absolute;
+    top: 15%;
+    left: 5%;	
+	
+}
+
+#visualizzaMotore {
+	
+	text-align: center;
+    position: absolute;
+    top: 15%;
+    left: 20%;	
+	
+	
+}

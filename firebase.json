@@ -1,0 +1,31 @@
+{
+  "database": {
+    "rules": "database.rules.json"
+  },
+  "hosting": {
+    "public": "public"
+  },
+  
+  "luci": {
+   
+     "luminosita": 0,
+	 "sogliaMinima": 120,
+	 "interruttore": false,
+	 "oraInizio": 7.00,
+	 "oraFine": 22.00,
+	 "oraAttuale": 0.00
+	 
+  
+  },
+  
+  "serbatoio": {
+  
+     "motore": false,
+     "sensoreLivello": 0,
+	 "durataAccensione": 1,
+	 "durataSpegnimento": 14
+	  
+  
+  }
+  
+}

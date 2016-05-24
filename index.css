@@ -1,8 +1,7 @@
 #interruttore {
 	
 	
-	text-align: center;
-    position: absolute;
+
     top: 5%;
     left: 5%;	
 	
@@ -11,26 +10,21 @@
 
 #visualizzaInterruttore {
 	
-	text-align: center;
-    position: absolute;
+
     top: 5%;
     left: 20%;	
 	
 }
 
 #motore {
-	
-	text-align: center;
-    position: absolute;
+
     top: 15%;
     left: 5%;	
 	
 }
 
 #visualizzaMotore {
-	
-	text-align: center;
-    position: absolute;
+
     top: 15%;
     left: 20%;	
 	

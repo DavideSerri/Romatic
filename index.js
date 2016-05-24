@@ -1,23 +1,51 @@
 
-
 //COLLEGAMENTO FIREBASE
 var config = {
-    apiKey: "AIzaSyCrShxGQFW1DoVeupCCLvOoEA10a7jJ-9s",
-    authDomain: "blinding-inferno-1936.firebaseapp.com",
-    databaseURL: "https://blinding-inferno-1936.firebaseio.com",
-    storageBucket: "blinding-inferno-1936.appspot.com",
+    apiKey: "AIzaSyCdegHgPn2Uklg8DuDRt1JPP1rvdvzy3sM",
+    authDomain: "aromatic-5cf2a.firebaseapp.com",
+    databaseURL: "https://aromatic-5cf2a.firebaseio.com",
+    storageBucket: "aromatic-5cf2a.appspot.com",
 };
-firebase.initializeApp(config);
-var interruttore = document.getElementById("interruttore");
-    interruttore.addEventListener("click", accensione, false);
 
-function accensione() {
+firebase.initializeApp(config);
+//FINE COLLEGAMENTO AL DATABASE
+//Controllo interruttore luce
+
+var valoreInterruttore;
+
+firebase.database().ref("luci").once("value").then(function (snapshot) {
+    valoreInterruttore = snapshot.val().interruttore;
+
+});
+outputAccensione();
+
+var interruttore = document.getElementById("interruttore");
+interruttore.addEventListener("click", accensione, false);
+
+function outputAccensione() {
+    console.log("valoreaccensione Attivato");
     var visualizzaInterruttore = document.getElementById("visualizzaInterruttore");
-    if (visualizzaInterruttore.innerHTML == "Luci Spente") {
-        visualizzaInterruttore.innerHTML = "Luci Accese";
+    if (valoreInterruttore == false) {
+        visualizzaInterruttore.innerHTML = "Luci Spente";
     } else {
-        visualizzaInterruttore.innerHTML="Luci Spente"
+        visualizzaInterruttore.innerHTML = "Luci Accese";
     }
-	
-	
+}
+function accensione() {
+    console.log("bottone cliccato")
+    if (valoreInterruttore == false) {
+        console.log("valore false");
+        firebase.database().ref("luci").set({
+            interruttore: true
+        });
+        outputAccensione();
+    } else {
+        console.log("valore true");
+        firebase.database().ref("luci").set({
+            interruttore: false
+        });
+        outputAccensione();
+    }
+
+
 }

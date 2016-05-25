@@ -21,6 +21,7 @@ function cicloServer() {
     outputDurataAccensionePompa();
     outputInterruttorePompa();
     outputLivelloAcqua();
+    outputAutomatismi();
 
     
 }

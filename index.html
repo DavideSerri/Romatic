@@ -75,10 +75,14 @@
             <option value="24">24</option>
         </select>
     </div>
+
     <div>
-        <p id="luciAutomatiche">automatico</p>
+        <label class="switch" >
+            <input type="checkbox"id="luciAutomatiche" >
+            <div class="slider round">
+            </div>
+        </label>
     </div>
-    
     <hr />
     <h3>CONTROLLO SULLA POMPA</h3>
     <button type="button" id="bottonePompa">Accendi/Spegni pompa</button>
@@ -92,7 +96,12 @@
          <p id="sensoreLivello"></p>
      </div>
     <div>
-        <p id="pompaAutomatica"> automatico</p>
+        <label class="switch" >
+            <input type="checkbox" id="pompaAutomatica">
+            <div class="slider round">
+            </div>
+        </label>
+        
     </div>
 	
 	
@@ -111,6 +120,7 @@
   <script src="script/orariFunzionamentoPompa.js"></script>
   <script src="script/interruttorePompa.js"></script>
   <script src="script/sensoreLivello.js"></script>
+  <script src="script/automatismo.js"></script>
 
   </body>
 </html>

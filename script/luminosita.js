@@ -1,14 +1,11 @@
 
-console.log("sono finito dentro luminosita.js");
-var casellaLuminosita = document.getElementById("luminosita");
-caricaLuminosita(casellaLuminosita);
-
-
-function caricaLuminosita(cella) {
-    console.log("caricamento luminosita in corso...");
+//funzione per l'output della luminosità del nostro fotosensore
+function caricaLuminosita() {
+    var casellaLuminosita = document.getElementById("luminosita"); //caching del posto dove vado a inserire l'output
+                                                                  
+       
+    
     firebase.database().ref("luci").once("value").then(function (snapshot) {
-        console.log("sono dentro il caricamento della luminosita");
-        console.log("luminosita: "+snapshot.val().luminosita);
-        cella.value= snapshot.val().luminosita;
+        casellaLuminosita.innerHTML ="luminosit&agrave;: "+ snapshot.val().luminosita; //inserimento del valore della luminosità       
     });
 }

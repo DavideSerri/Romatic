@@ -1,11 +1,8 @@
 //inizializzo il valore dell'interruttore e appena carica la pagina
-//metto in output il valore in questo istante
 var valoreInterruttore;
-outputAccensione();
-
 //prendo l'interruttore 
 var interruttore = document.getElementById("interruttore");
-interruttore.addEventListener("click", accensione, false);
+    interruttore.addEventListener("click", accensione, false);
 //Funzione che setta il suo valore, valore: boolean
 function setValoreInterruttore(valore) {
     valoreInterruttore = valore;

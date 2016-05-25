@@ -14,9 +14,14 @@ function cicloServer() {
     
     caricaLuminosita(); //output del valore della luminosità dei led
     outputAccensione(); //output del valore on/off dei led
+    outputSogliaMinimaAttuale();
     outputOraCorrente(); //Output con ore e minuti in un paragrafo
     outputOraAccensione();
     outputOraSpegnimento();
+    outputDurataAccensionePompa();
+    outputInterruttorePompa();
+    outputLivelloAcqua();
+
     
 }
 

@@ -3,7 +3,7 @@
 function outputOraCorrente() {
     var ora = new Date();
     var output = document.getElementById("oraCorrente");
-    output.innerHTML ="Orario: "+ ora.getHours()+"h" + ora.getMinutes()+"m";
+    output.innerHTML ="Ora Attuale: "+ ora.getHours()+"h" + ora.getMinutes()+"m";
 }
 function outputOraAccensione() {
     var casellaOraInizio = document.getElementById("oraInizio");

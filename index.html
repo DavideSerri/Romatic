@@ -6,10 +6,15 @@
     <link rel="stylesheet" href="index.css">
   </head>
   <body>
- 
+    <h3>CONTROLLO SULLE LUCI</h3>
     <button type="button" id="interruttore"> Accendi/Spegni luci </button>
     <div id="visualizzaInterruttore">Luci Spente</div> 	
     <div> <p id="luminosita"></p></div>
+      <div>
+          <p id="sogliaMinimaAttuale"></p>
+          <button id="cambioSogliaMinima">Modifica</button>
+          <p id="controlloSoglia"></p>
+      </div>
     <div><p id="oraCorrente"></p></div>
     <!-- Selezione orario inizio e fine--> 
     <div>
@@ -70,8 +75,19 @@
             <option value="24">24</option>
         </select>
     </div>
-    <button type="button" id="motore">Accendi/Spegni pompa</button>
+   
+    <hr />
+    <h3>CONTROLLO SULLA POMPA</h3>
+    <button type="button" id="bottonePompa">Accendi/Spegni pompa</button>
     <div id="visualizzaMotore">Motore Spento</div>   
+    <div>
+       Ciclo Accensione/Spegnimento <br />
+        Accensione: <input type="text" value="" id="accensionePompa"/> <br />
+        Spegnimento. <input type="text" value="" id="spegnimentoPompa"/>
+    </div>
+     <div>
+         <p id="sensoreLivello"></p>
+     </div>
 	
 	
 	
@@ -86,6 +102,9 @@
   <script src="script/interruttore.js"></script>
   <script src="script/luminosita.js"></script>
   <script src="script/orari.js"></script>
+  <script src="script/orariFunzionamentoPompa.js"></script>
+  <script src="script/interruttorePompa.js"></script>
+  <script src="script/sensoreLivello.js"></script>
 
   </body>
 </html>

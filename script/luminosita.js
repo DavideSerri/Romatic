@@ -10,9 +10,9 @@ function outputSogliaMinimaAttuale() {
     var casellaSoglia = document.getElementById("sogliaMinimaAttuale");
     var outputControlloSoglia = document.getElementById("controlloSoglia");
     firebase.database().ref("luci").once("value").then(function (snapshot) {
-        casellaSoglia.innerHTML = "Soglia luminosit&agrave; minima attuale: " + snapshot.val().sogliaMinima;
+        casellaSoglia.innerHTML = "Soglia luminosit&agrave; minima: " + snapshot.val().sogliaMinima;
         if (snapshot.val().interruttore == false){
-            outputControlloSoglia.innerHTML = " Luminosit&agrave; : interruttore spento :C";
+            outputControlloSoglia.innerHTML = " Luminosit&agrave; : interruttore spento";
         } else if(snapshot.val().sogliaMinima <= snapshot.val().luminosita) {
             outputControlloSoglia.innerHTML = " Luminosit&agrave; : Ok :)";
         }else {

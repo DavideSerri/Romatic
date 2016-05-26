@@ -21,113 +21,142 @@
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" > 
 				<!--  assegno metà schermo alla div da monitor e tablet, assegno tutto lo schermo alla div da smartphone -->
 				<div class="jumbotron">
-    <h3>CONTROLLO SULLE LUCI</h3>
-    <button type="button" id="interruttore"> Accendi/Spegni luci </button>
-    <div id="visualizzaInterruttore">Luci Spente</div> 	
-    <div> <p id="luminosita"></p></div>
-      <div>
-          <p id="sogliaMinimaAttuale"></p>
-          <button id="cambioSogliaMinima">Modifica</button>
-          <p id="controlloSoglia"></p>
-      </div>
-    <div><p id="oraCorrente"></p></div>
+					<h3>CONTROLLO SULLE LUCI</h3>
+					<div>
+						<p id="label-automatico">
+							
+							Mod. Automatica:
+								
+						</p>
+						<label class="switch" id="label-luciAutomatiche">
+							<input type="checkbox" id="luciAutomatiche">
+								<div class="slider round">
+								</div>
+						</label>
+					</div>
+					<div>
+						<p id="label-luci">
+								
+							Interruttore Luci:
+								
+						</p>
+						<label class="switch" id="label-interruttore" >
+							<input type="checkbox" id="interruttore">
+								<div class="slider round">
+								</div>
+						</label>
+					</div>
+					<div> 
+						<p id="luminosita"></p>
+					</div>
+					<div>
+						<p id="sogliaMinimaAttuale"></p>
+						<button id="cambioSogliaMinima">Modifica</button>
+						<p id="controlloSoglia"></p>
+					</div>
+					<div>
+						<p id="oraCorrente"></p>
+					</div>
     <!-- Selezione orario inizio e fine--> 
-    <div>
-        Ora accensione:
-        <select id="oraInizio">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-            <option value="13">13</option>
-            <option value="14">14</option>
-            <option value="15">15</option>
-            <option value="16">16</option>
-            <option value="17">17</option>
-            <option value="18">18</option>
-            <option value="19">19</option>
-            <option value="20">20</option>
-            <option value="21">21</option>
-            <option value="22">22</option>
-            <option value="23">23</option>
-            <option value="24">24</option>
-        </select>
-    </div>
-    <div>
-        Ora spegnimento:
-        <select id="oraSpegnimento">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-            <option value="13">13</option>
-            <option value="14">14</option>
-            <option value="15">15</option>
-            <option value="16">16</option>
-            <option value="17">17</option>
-            <option value="18">18</option>
-            <option value="19">19</option>
-            <option value="20">20</option>
-            <option value="21">21</option>
-            <option value="22">22</option>
-            <option value="23">23</option>
-            <option value="24">24</option>
-        </select>
-    </div>
-
-    <div>
-        <label class="switch" >
-            <input type="checkbox"id="luciAutomatiche" >
-            <div class="slider round">
-            </div>
-        </label>
-    </div>
+					<div>
+						Ora accensione:
+						<select id="oraInizio">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option>
+							<option value="13">13</option>
+							<option value="14">14</option>
+							<option value="15">15</option>
+							<option value="16">16</option>
+							<option value="17">17</option>
+							<option value="18">18</option>
+							<option value="19">19</option>
+							<option value="20">20</option>
+							<option value="21">21</option>
+							<option value="22">22</option>
+							<option value="23">23</option>
+							<option value="24">24</option>
+						</select>
+					</div>
+					<div>
+						Ora spegnimento:
+						<select id="oraSpegnimento">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option>
+							<option value="13">13</option>
+							<option value="14">14</option>
+							<option value="15">15</option>
+							<option value="16">16</option>
+							<option value="17">17</option>
+							<option value="18">18</option>
+							<option value="19">19</option>
+							<option value="20">20</option>
+							<option value="21">21</option>
+							<option value="22">22</option>
+							<option value="23">23</option>
+							<option value="24">24</option>
+						</select>
+					</div>
 				</div>
 			</div>
 
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" >
 				<div class="jumbotron">	
-
-
 				
-    <h3>CONTROLLO SULLA POMPA</h3>
-    <button type="button" id="bottonePompa">Accendi/Spegni pompa</button>
-    <div id="visualizzaMotore">Motore Spento</div>   
-    <div>
-       Ciclo Accensione/Spegnimento <br />
-        Accensione: <input type="text" value="" id="accensionePompa"/> <br />
-        Spegnimento. <input type="text" value="" id="spegnimentoPompa"/>
-    </div>
-     <div>
-         <p id="sensoreLivello"></p>
-     </div>
-    <div>
-        <label class="switch" >
-            <input type="checkbox" id="pompaAutomatica">
-            <div class="slider round">
-            </div>
-        </label>
-        
-    </div>
+					<h3>CONTROLLO SULLA POMPA</h3>
+					<p id="label-automatico">
+							
+						Mod. Automatica:
+								
+					</p>
+					<div>
+						<label class="switch" >
+							<input type="checkbox" id="pompaAutomatica">
+							<div class="slider round">
+							</div>
+						</label>
+					</div>
+					<div>
+						<p id="label-luci">
+							
+							Interruttore Motore:
+							
+						</p>
+						<label class="switch" id="label-motore" >
+							<input type="checkbox" id="motore">
+								<div class="slider round">
+								</div>
+						</label>
+					</div>  
+					<div>
+						Ciclo Accensione/Spegnimento <br />
+						Accensione: <input type="text" value="" id="accensionePompa"/> <br />
+						Spegnimento. <input type="text" value="" id="spegnimentoPompa"/>
+					</div>
+					<div>
+						 <p id="sensoreLivello"></p>
+					</div>
 				</div>	
-			</div>
-	
+			</div>	
 		</div>
 	</div>
 	

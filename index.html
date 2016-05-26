@@ -21,7 +21,9 @@
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" > 
 				<!--  assegno metà schermo alla div da monitor e tablet, assegno tutto lo schermo alla div da smartphone -->
 				<div class="jumbotron">
-					<h3>CONTROLLO SULLE LUCI</h3>
+					<div class="page-header">
+						<h3>PANNELLO LUCI</h3>
+					</div>	
 					<div>
 						<p id="label-automatico">
 							
@@ -34,7 +36,7 @@
 								</div>
 						</label>
 					</div>
-					<div>
+					<div class="borderbottom">
 						<p id="label-luci">
 								
 							Interruttore Luci:
@@ -46,12 +48,14 @@
 								</div>
 						</label>
 					</div>
+					<br>
 					<div> 
 						<p id="luminosita"></p>
 					</div>
 					<div>
-						<p id="sogliaMinimaAttuale"></p>
-						<button id="cambioSogliaMinima">Modifica</button>
+						<p id="sogliaMinimaAttuale">
+						
+						</p>						
 						<p id="controlloSoglia"></p>
 					</div>
 					<div>
@@ -121,21 +125,22 @@
 
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" >
 				<div class="jumbotron">	
-				
-					<h3>CONTROLLO SULLA POMPA</h3>
-					<p id="label-automatico">
-							
-						Mod. Automatica:
-								
-					</p>
+					<div class="page-header">
+						<h3>PANNELLO SERBATOIO</h3>
+					</div>	
 					<div>
+						<p id="label-automatico">
+								
+							Mod. Automatica:
+								
+						</p>
 						<label class="switch" >
 							<input type="checkbox" id="pompaAutomatica">
 							<div class="slider round">
 							</div>
 						</label>
 					</div>
-					<div>
+					<div class="borderbottom">
 						<p id="label-luci">
 							
 							Interruttore Motore:
@@ -146,7 +151,8 @@
 								<div class="slider round">
 								</div>
 						</label>
-					</div>  
+					</div>
+					<br>
 					<div>
 						Ciclo Accensione/Spegnimento <br />
 						Accensione: <input type="text" value="" id="accensionePompa"/> <br />

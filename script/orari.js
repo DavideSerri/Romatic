@@ -1,10 +1,5 @@
 
 //Output dell'ora e minuti correnti
-function outputOraCorrente() {
-    var ora = new Date();
-    var output = document.getElementById("oraCorrente");
-    output.innerHTML ="Ora Attuale: "+ ora.getHours()+"h" + ora.getMinutes()+"m";
-}
 function outputOraAccensione() {
     var casellaOraInizio = document.getElementById("oraInizio");
     firebase.database().ref("luci").once("value").then(function (snapshot) {

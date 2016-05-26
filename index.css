@@ -85,3 +85,9 @@ input:checked + .slider:before {
 	
 }
 
+.borderbottom {
+	
+	border-bottom: 2px solid #eee;
+	
+	
+}

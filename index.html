@@ -1,11 +1,26 @@
 ﻿<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>Aromatic</title>
+    <meta charset="utf-8">    
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Aromatic</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" href="index.css">
   </head>
   <body>
+  
+	<div class="container-fluid">
+		<div class="page-header" id="titolo">
+			
+			     <h1> @romatic control panel </h1>
+			 
+		</div>
+   
+        <div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" > 
+				<!--  assegno metà schermo alla div da monitor e tablet, assegno tutto lo schermo alla div da smartphone -->
+				<div class="jumbotron">
     <h3>CONTROLLO SULLE LUCI</h3>
     <button type="button" id="interruttore"> Accendi/Spegni luci </button>
     <div id="visualizzaInterruttore">Luci Spente</div> 	
@@ -83,7 +98,14 @@
             </div>
         </label>
     </div>
-    <hr />
+				</div>
+			</div>
+
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" >
+				<div class="jumbotron">	
+
+
+				
     <h3>CONTROLLO SULLA POMPA</h3>
     <button type="button" id="bottonePompa">Accendi/Spegni pompa</button>
     <div id="visualizzaMotore">Motore Spento</div>   
@@ -103,6 +125,11 @@
         </label>
         
     </div>
+				</div>	
+			</div>
+	
+		</div>
+	</div>
 	
 	
 	
@@ -110,17 +137,17 @@
 	
 	
 	
-	
-	
-  <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js" gapi_processed="true"></script> 
-  <script src="script/index.js"></script> 
-  <script src="script/interruttore.js"></script>
-  <script src="script/luminosita.js"></script>
-  <script src="script/orari.js"></script>
-  <script src="script/orariFunzionamentoPompa.js"></script>
-  <script src="script/interruttorePompa.js"></script>
-  <script src="script/sensoreLivello.js"></script>
-  <script src="script/automatismo.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> 
+	<script src="js/bootstrap.min.js"> </script>   
+	<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js" gapi_processed="true"></script> 
+	<script src="script/index.js"></script> 
+	<script src="script/interruttore.js"></script>
+	<script src="script/luminosita.js"></script>
+	<script src="script/orari.js"></script>
+	<script src="script/orariFunzionamentoPompa.js"></script>
+	<script src="script/interruttorePompa.js"></script>
+	<script src="script/sensoreLivello.js"></script>
+	<script src="script/automatismo.js"></script>
 
   </body>
 </html>

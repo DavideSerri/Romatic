@@ -13,11 +13,11 @@ function outputSogliaMinimaAttuale() {
         casellaSoglia.innerHTML = "Lum. minima: " + snapshot.val().sogliaMinima+"<span>"+
 		"<button type='button' class='btn btn-success' id='cambioSogliaMinima' onclick='cambioSogliaMinima()'>Modifica</button>"+"</span>";
         if (snapshot.val().interruttore == false){
-            outputControlloSoglia.innerHTML = " Luminosit&agrave; : interruttore spento";
+            outputControlloSoglia.innerHTML = " Luminosit&agrave;: interruttore spento";
         } else if(snapshot.val().sogliaMinima <= snapshot.val().luminosita) {
-            outputControlloSoglia.innerHTML = " Luminosit&agrave; : Sufficiente";
+            outputControlloSoglia.innerHTML = " Luminosit&agrave;: Sufficiente";
         }else {
-            outputControlloSoglia.innerHTML = " Luminosit&agrave; : Bassa";
+            outputControlloSoglia.innerHTML = " Luminosit&agrave;: Bassa";
         }
     });
 }

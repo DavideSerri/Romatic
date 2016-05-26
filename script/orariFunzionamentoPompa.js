@@ -2,35 +2,36 @@ function outputDurataAccensionePompa() {
     var outputAccensionePompa = document.getElementById("accensionePompa");
     var outputSpegnimentoPompa = document.getElementById("spegnimentoPompa");
     firebase.database().ref("serbatoio").once("value").then(function (snapshot) {
-        outputAccensionePompa.value = snapshot.val().durataAccensione;
-        outputSpegnimentoPompa.value = snapshot.val().durataSpegnimento;
+        outputAccensionePompa.innerHTML = " Accensione : "+snapshot.val().durataAccensione+"m"+" "+" "+"<span>"+
+		"<button type='button' class='btn btn-success' id='cambioDurataAccensionePompa' onclick='cambioDurataAccensionePompa()'>Modifica</button>"+"</span>";
+        outputSpegnimentoPompa.innerHTML = "Spegnimento: "+snapshot.val().durataSpegnimento+"m"+"<span>"+
+		"<button type='button' class='btn btn-success' id='cambioDurataSpegnimentoPompa' onclick='cambioDurataSpegnimentoPompa()'>Modifica</button>"+"</span>";
     });
 }
-var outputAccensionePompaOnChange = document.getElementById("accensionePompa");
-    outputAccensionePompaOnChange.addEventListener("input", cambioDurataAccensionePompa, false);
 
-var outputSpegnimentoPompaOnChange = document.getElementById("spegnimentoPompa");
-    outputSpegnimentoPompaOnChange.addEventListener("input", cambioDurataSpegnimentoPompa, false);
+
 
 function cambioDurataAccensionePompa() {
     var aggiornamentoAccensionePompa = {};
-    if (!isNaN(parseInt(outputAccensionePompaOnChange.value))) {
-        aggiornamentoAccensionePompa["durataAccensione"] = parseInt(outputAccensionePompaOnChange.value);
-        firebase.database().ref("serbatoio").update(aggiornamentoAccensionePompa);
-    } else {
-        aggiornamentoAccensionePompa["durataAccensione"] = 1; //valore di default
-        firebase.database().ref("serbatoio").update(aggiornamentoAccensionePompa);
-    }
+	var valore = "";
+	while (isNaN(parseInt(valore))) {
+            console.log("valore preso in input" + parseInt(valore));
 
+            valore =  prompt("Nuova durata di accensione: ");
+    }
+	var outputAccensionePompa = document.getElementById("accensionePompa");
+    aggiornamentoAccensionePompa["durataAccensione"] = parseInt(valore);
+    firebase.database().ref("serbatoio").update(aggiornamentoAccensionePompa);
 };
 function cambioDurataSpegnimentoPompa() {
     var aggiornamentoSpegnimentoPompa = {};
-    if (!isNaN(parseInt(outputSpegnimentoPompaOnChange.value))) {
-        aggiornamentoSpegnimentoPompa["durataSpegnimento"] = parseInt(outputSpegnimentoPompaOnChange.value);
-        firebase.database().ref("serbatoio").update(aggiornamentoSpegnimentoPompa);
-    } else {
-        aggiornamentoSpegnimentoPompa["durataSpegnimento"] = 14; //valore di default
-        firebase.database().ref("serbatoio").update(aggiornamentoSpegnimentoPompa); 
-    }
+	var valore = "";
+	while (isNaN(parseInt(valore))) {
+            console.log("valore preso in input" + parseInt(valore));
 
+            valore =  prompt("Nuova durata di spegnimento: ");
+    }
+	var outputSpegnimentoPompa = document.getElementById("spegnimentoPompa");
+    aggiornamentoSpegnimentoPompa["durataSpegnimento"] = parseInt(valore);
+    firebase.database().ref("serbatoio").update(aggiornamentoSpegnimentoPompa);
 }

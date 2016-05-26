@@ -5,6 +5,8 @@ body {
 	background-image: url("concept2.jpg");
 	background-size:     cover;  
 	background-repeat:   no-repeat;
+	background-position:top center;
+	background-attachment:fixed;
     background-position: center center; 
 	color: white;
 	

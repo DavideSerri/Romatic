@@ -3,14 +3,14 @@
 function caricaLuminosita() {
     var casellaLuminosita = document.getElementById("luminosita"); //caching del posto dove vado a inserire l'output 
     firebase.database().ref("luci").once("value").then(function (snapshot) {
-        casellaLuminosita.innerHTML ="luminosit&agrave;: "+ snapshot.val().luminosita; //inserimento del valore della luminosità       
+        casellaLuminosita.innerHTML ="Luminosit&agrave;: "+ snapshot.val().luminosita; //inserimento del valore della luminosità       
     });
 }
 function outputSogliaMinimaAttuale() {
     var casellaSoglia = document.getElementById("sogliaMinimaAttuale");
     var outputControlloSoglia = document.getElementById("controlloSoglia");
     firebase.database().ref("luci").once("value").then(function (snapshot) {
-        casellaSoglia.innerHTML = "Soglia luminosit&agrave; minima: " + snapshot.val().sogliaMinima+"<span>"+
+        casellaSoglia.innerHTML = "Lum. minima: " + snapshot.val().sogliaMinima+"<span>"+
 		"<button type='button' class='btn btn-success' id='cambioSogliaMinima' onclick='cambioSogliaMinima()'>Modifica</button>"+"</span>";
         if (snapshot.val().interruttore == false){
             outputControlloSoglia.innerHTML = " Luminosit&agrave; : interruttore spento";

@@ -1,7 +1,7 @@
 
 body {
 	
-	font-family:georgian;
+	font-family:‘Courier New’, Courier, monospace;
 	background-image: url("concept2.jpg");
 	background-size:     cover;  
 	background-repeat:   no-repeat;
@@ -90,6 +90,21 @@ input:checked + .slider:before {
 .borderbottom {
 	
 	border-bottom: 2px solid #eee;
+	
+	
+}
+
+.levelBar {
+	
+text-align: center;	
+	
+}
+
+#sensoreLivello {
+	
+	color: black;
+	text-align: center;
+	
 	
 	
 }

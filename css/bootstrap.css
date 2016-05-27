@@ -3062,25 +3062,25 @@ fieldset[disabled] a.btn {
 }
 .btn-default {
   color: #333;
-  background-color: #fff;
+  background-color: #eee;
   border-color: #ccc;
 }
 .btn-default:focus,
 .btn-default.focus {
   color: #333;
-  background-color: #e6e6e6;
+  background-color: #eee;
   border-color: #8c8c8c;
 }
 .btn-default:hover {
   color: #333;
-  background-color: #e6e6e6;
+  background-color: #eee;
   border-color: #adadad;
 }
 .btn-default:active,
 .btn-default.active,
 .open > .dropdown-toggle.btn-default {
   color: #333;
-  background-color: #e6e6e6;
+  background-color: #eee;
   border-color: #adadad;
 }
 .btn-default:active:hover,
@@ -3093,7 +3093,7 @@ fieldset[disabled] a.btn {
 .btn-default.active.focus,
 .open > .dropdown-toggle.btn-default.focus {
   color: #333;
-  background-color: #d4d4d4;
+  background-color: #eee;
   border-color: #8c8c8c;
 }
 .btn-default:active,
@@ -3110,12 +3110,12 @@ fieldset[disabled] .btn-default:focus,
 .btn-default.disabled.focus,
 .btn-default[disabled].focus,
 fieldset[disabled] .btn-default.focus {
-  background-color: #fff;
+  background-color: #eee;
   border-color: #ccc;
 }
 .btn-default .badge {
   color: #fff;
-  background-color: #333;
+  background-color: #eee;
 }
 .btn-primary {
   color: #fff;
@@ -5129,7 +5129,7 @@ a.thumbnail.active {
   }
 }
 .progress {
-  height: 20px;
+  height: 30px;
   margin-bottom: 20px;
   overflow: hidden;
   background-color: #f5f5f5;
@@ -5142,7 +5142,7 @@ a.thumbnail.active {
   width: 0;
   height: 100%;
   font-size: 12px;
-  line-height: 20px;
+  line-height: 30px;
   color: #fff;
   text-align: center;
   background-color: #337ab7;

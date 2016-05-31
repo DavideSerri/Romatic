@@ -2,7 +2,7 @@
 body {
 	
 	font-family:‘Courier New’, Courier, monospace;
-	background-image: url("concept2.jpg");
+	background-image: url("concept3.jpg");
 	background-size:     cover;  
 	background-repeat:   no-repeat;
 	background-position:top center;
@@ -83,7 +83,8 @@ input:checked + .slider:before {
 
 #titolo {
 	
-	text-align:center;	
+	text-align:center;
+	color: white;	
 	
 }
 
@@ -104,6 +105,20 @@ text-align: center;
 	
 	color: black;
 	text-align: center;
+	
+	
+	
+}
+
+.centra {
+	
+	
+	text-align: center;
+}
+
+#popup {
+	
+	font-size: 24px;
 	
 	
 	

@@ -5909,7 +5909,12 @@ button.close {
 }
 .modal-content {
   position: relative;
-  background-color: #fff;
+  background-image: url("concept3.jpg");
+	background-size:  cover;
+	background-repeat:   no-repeat;
+	background-position:top center;
+	background-attachment:fixed;
+    background-position: center center;
   -webkit-background-clip: padding-box;
           background-clip: padding-box;
   border: 1px solid #999;

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">    
@@ -6,35 +6,214 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Aromatic</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link rel="stylesheet" href="Login.css">
+    <link rel="stylesheet" href="index.css">
   </head>
   <body>
   
-  
 	<div class="container-fluid">
-		<div class="page-header" id="titolo">
-	 
-			<h1> Aromatic Login </h1>
 	
+		<div class="modal fade" id="myModal">
+		
+		<div class="modal-dialog">
+		<div class="modal-content" id="popup">
+		<div class="modal-header">
+			<h3>Aromatic Login</h3>
 		</div>
+		<div class="modal-body">
+						<div class="row">
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 centra"> Inserisci Email </div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 centra"> 
+								<input type="email" class="form-control" id="Email" placeholder="Inserisci email"> 
+							</div>
+						</div>
+						<br>
+						<br>
+						<div class="row">
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 centra"> Inserisci Password </div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 centra"> 
+								<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+							</div>
+						</div>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-primary" id="submit" data-dismiss="modal"> Login </button>
+		</div>
+		</div>
+		</div>
+		</div>
+	
+	
+	
+		<div class="page-header" id="titolo">
 			
-		<div class="row">
-			<div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
+			     <h1> Aromatic control panel </h1>
+			 
+		</div>
+   
+        <div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" > 
+				<!--  assegno metà schermo alla div da monitor e tablet, assegno tutto lo schermo alla div da smartphone -->
 				<div class="jumbotron">
-					<div class="row">
-						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"> Inserisci Email </div>
-						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 "> "CAMPO EMAIL" </div>
-					</div>
-					<div class="row">
-						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"> Inserisci Password </div>
-						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 "> "CAMPO PASSWORD" </div>
+					<div class="page-header">
+						<h3>PANNELLO LUCI</h3>
 					</div>	
-			</div>		
-		</div>	
+					<div>
+						<p id="label-automatico">
+							
+							Mod. Automatica:
+								
+						</p>
+						<label class="switch" id="label-luciAutomatiche">
+							<input type="checkbox" id="luciAutomatiche">
+								<div class="slider round">
+								</div>
+						</label>
+					</div>
+					<div class="borderbottom">
+						<p id="label-luci">
+								
+							Interruttore Luci:
+								
+						</p>
+						<label class="switch" id="label-interruttore" >
+							<input type="checkbox" id="interruttore">
+								<div class="slider round">
+								</div>
+						</label>
+					</div>
+					<br>
+					<div> 
+						<p id="luminosita"></p>
+					</div>
+					<div>
+						<p id="sogliaMinimaAttuale">
+						
+						</p>						
+						<p id="controlloSoglia"></p>
+					</div>
+					<div>
+						<p id="oraCorrente"></p>
+					</div>
+    <!-- Selezione orario inizio e fine--> 
+					<div>
+						<p>
+							Ora Accensione
+							<div class="btn-group btn-group-xs" role="group" aria-label="...">
+								<button type="button" class="btn btn-primary" id="on1">1</button>
+								<button type="button" class="btn btn-primary" id="on2">2</button>
+								<button type="button" class="btn btn-primary" id="on3">3</button>
+								<button type="button" class="btn btn-primary" id="on4">4</button>
+								<button type="button" class="btn btn-primary" id="on5">5</button>
+								<button type="button" class="btn btn-primary" id="on6">6</button>
+								<button type="button" class="btn btn-primary" id="on7">7</button>
+								<button type="button" class="btn btn-primary" id="on8">8</button>
+								<button type="button" class="btn btn-primary" id="on9">9</button>
+								<button type="button" class="btn btn-primary" id="on10">10</button>
+								<button type="button" class="btn btn-primary" id="on11">11</button>
+								<button type="button" class="btn btn-primary" id="on12">12</button>
+								<button type="button" class="btn btn-primary" id="on13">13</button>
+								<button type="button" class="btn btn-primary" id="on14">14</button>
+								<button type="button" class="btn btn-primary" id="on15">15</button>
+								<button type="button" class="btn btn-primary" id="on16">16</button>
+								<button type="button" class="btn btn-primary" id="on17">17</button>
+								<button type="button" class="btn btn-primary" id="on18">18</button>
+								<button type="button" class="btn btn-primary" id="on19">19</button>
+								<button type="button" class="btn btn-primary" id="on20">20</button>
+								<button type="button" class="btn btn-primary" id="on21">21</button>
+								<button type="button" class="btn btn-primary" id="on22">22</button>
+								<button type="button" class="btn btn-primary" id="on23">23</button>
+								<button type="button" class="btn btn-primary" id="on24">24</button>
+							</div>
+						</p>						
+					</div>
+					<div>
+						<p>
+							Ora Spegnimento
+							<div class="btn-group btn-group-xs" role="group" aria-label="...">
+								<button type="button" class="btn btn-primary" id="off1">1</button>
+								<button type="button" class="btn btn-primary" id="off2">2</button>
+								<button type="button" class="btn btn-primary" id="off3">3</button>
+								<button type="button" class="btn btn-primary" id="off4">4</button>
+								<button type="button" class="btn btn-primary" id="off5">5</button>
+								<button type="button" class="btn btn-primary" id="off6">6</button>
+								<button type="button" class="btn btn-primary" id="off7">7</button>
+								<button type="button" class="btn btn-primary" id="off8">8</button>
+								<button type="button" class="btn btn-primary" id="off9">9</button>
+								<button type="button" class="btn btn-primary" id="off10">10</button>
+								<button type="button" class="btn btn-primary" id="off11">11</button>
+								<button type="button" class="btn btn-primary" id="off12">12</button>
+								<button type="button" class="btn btn-primary" id="off13">13</button>
+								<button type="button" class="btn btn-primary" id="off14">14</button>
+								<button type="button" class="btn btn-primary" id="off15">15</button>
+								<button type="button" class="btn btn-primary" id="off16">16</button>
+								<button type="button" class="btn btn-primary" id="off17">17</button>
+								<button type="button" class="btn btn-primary" id="off18">18</button>
+								<button type="button" class="btn btn-primary" id="off19">19</button>
+								<button type="button" class="btn btn-primary" id="off20">20</button>
+								<button type="button" class="btn btn-primary" id="off21">21</button>
+								<button type="button" class="btn btn-primary" id="off22">22</button>
+								<button type="button" class="btn btn-primary" id="off23">23</button>
+								<button type="button" class="btn btn-primary" id="off24">24</button>
+							</div>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" >
+				<div class="jumbotron">	
+					<div class="page-header">
+						<h3>PANNELLO SERBATOIO</h3>
+					</div>	
+					<div>
+						<p id="label-automatico">
+								
+							Mod. Automatica:
+								
+						</p>
+						<label class="switch" >
+							<input type="checkbox" id="pompaAutomatica">
+							<div class="slider round">
+							</div>
+						</label>
+					</div>
+					<div class="borderbottom">
+						<p id="label-luci">
+							
+							Interruttore Motore:
+							
+						</p>
+						<label class="switch" id="label-motore" >
+							<input type="checkbox" id="motore">
+								<div class="slider round">
+								</div>
+						</label>
+					</div>
+					<br>
+					<div>
+						<p id="accensionePompa">
+						
+						</p>
+						<p id="spegnimentoPompa">
+						
+						</p>
+					</div>
+					<div>
+					</div>
+					<p>
+						livello acqua:
+					</p>
+					 <div class="progress">
+						<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="0"
+							aria-valuemin="0" aria-valuemax="100" style="width:0%" id="sensoreLivello">
+						
+						</div>
+					</div>
+					<button type="button" class="btn btn-primary" id="receive"> Ricevi dati </button>
+				</div>	
+			</div>	
+		</div>
 	</div>
-	
-	
-	
 	
 	
 	
@@ -44,7 +223,15 @@
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> 
 	<script src="js/bootstrap.min.js"> </script>   
-	<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js" gapi_processed="true"></script>
-	<script src="script/Login.js"></script>	
+	<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js" gapi_processed="true"></script> 
+	<script src="script/index.js"></script> 
+	<script src="script/interruttore.js"></script>
+	<script src="script/luminosita.js"></script>
+	<script src="script/orari.js"></script>
+	<script src="script/orariFunzionamentoPompa.js"></script>
+	<script src="script/interruttorePompa.js"></script>
+	<script src="script/sensoreLivello.js"></script>
+	<script src="script/automatismo.js"></script>
+
   </body>
 </html>

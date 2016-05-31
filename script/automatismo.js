@@ -46,6 +46,7 @@ function allerta() {
 	
 function cambioAutomaticoLuce() {
     cambio = {};
+	var bottoneLuce2 = document.getElementById("interruttore");
 	var labelLuce = document.getElementById("label-interruttore");
     firebase.database().ref("luci").once("value").then(function (snapshot) { 
     if (snapshot.val().automatico) {
@@ -64,7 +65,6 @@ function cambioAutomaticoLuce() {
     });
 }
 function cambioAutomaticoPompa() {
-	var bottoneLuce2 = document.getElementById("interruttore");
 	var bottonePompa2 = document.getElementById("motore");
 	var labelPompa = document.getElementById("label-motore");
     cambio = {};

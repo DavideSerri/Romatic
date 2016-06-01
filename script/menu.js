@@ -26,17 +26,17 @@ $(".flip").hover(function(){
 
 
 var apriRegistrazione = document.getElementById("openRegistration");
-apriRegistrazione.addEventListener("click",openRegistration, false);
+    apriRegistrazione.addEventListener("click",openRegistration, false);
 var sendRegistration = document.getElementById("sendRegistration");
-sendRegistration.addEventListener("click",registra,false);
+    sendRegistration.addEventListener("click",registra,false);
 var menuRasp = document.getElementById("selectRasp");
-menuRasp.addEventListener("click", apriMenuRasp, false);
+    menuRasp.addEventListener("click", apriMenuRasp, false);
 var logout = document.getElementById("logout");
-logout.addEventListener("click", doLogout, false);
+    logout.addEventListener("click", doLogout, false);
 var apriLogin = document.getElementById("apriLogin");
-apriLogin.addEventListener("click",doLogin,false);
+    apriLogin.addEventListener("click",doLogin,false);
 var apriLogin2 = document.getElementById("apriLogin2");
-apriLogin2.addEventListener("click",doLogin,false);
+    apriLogin2.addEventListener("click",doLogin,false);
 
 function apriMenuRasp() {
 	
@@ -56,15 +56,18 @@ function registra() {
 	else {
 		
 		$('#register').modal('show');
-		
+	  
+        
 	}
 	
 }
 
 function doLogin() {
-	
+    var bottoneLogin = document.addEventListener("loginUtente");
+    var emailUtente = document.addEventListener("Email");
+    var passwordUtente = document.addEventListener("passwordUtente");
 	$('#login').modal('show');
-		
+    
 }
 
 function openRegistration() {

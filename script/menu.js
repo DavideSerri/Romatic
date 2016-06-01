@@ -37,13 +37,23 @@ var apriLogin = document.getElementById("loginUtente");
     apriLogin.addEventListener("click",doLogin,false);
 var apriLogin2 = document.getElementById("apriLogin2");
     apriLogin2.addEventListener("click",apriFinestraLogin,false);
-
+var addRasp = document.getElementById("addRasp");
+    addRasp.addEventListener("click",apriAggiuntaPrototipo, false);
+	
+	
 function apriMenuRasp() {
 	
 	window.open("Panel.html");
 	
 	
 }
+
+function apriAggiuntaPrototipo() {
+	
+	$('#modalPrototipo').modal('show');
+		
+}
+
 //TODO SISTEMARE IL NOME UTENTE (PROB firebase bug)
 function registra() {
     var nomeUtente = document.getElementById("nomeUtente").value;

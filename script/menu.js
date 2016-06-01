@@ -33,10 +33,10 @@ var menuRasp = document.getElementById("selectRasp");
     menuRasp.addEventListener("click", apriMenuRasp, false);
 var logout = document.getElementById("logout");
     logout.addEventListener("click", doLogout, false);
-var apriLogin = document.getElementById("apriLogin");
+var apriLogin = document.getElementById("loginUtente");
     apriLogin.addEventListener("click",doLogin,false);
 var apriLogin2 = document.getElementById("apriLogin2");
-    apriLogin2.addEventListener("click",doLogin,false);
+    apriLogin2.addEventListener("click",apriFinestraLogin,false);
 
 function apriMenuRasp() {
 	
@@ -61,12 +61,34 @@ function registra() {
 	}
 	
 }
-
+function apriFinestraLogin() {
+    $('#login').modal('show');
+}
 function doLogin() {
-    var bottoneLogin = document.addEventListener("loginUtente");
-    var emailUtente = document.addEventListener("Email");
-    var passwordUtente = document.addEventListener("passwordUtente");
-	$('#login').modal('show');
+    console.log("sono entrato dentro");
+    var bottoneLogin = document.getElementById("loginUtente");
+    var emailUtente = document.getElementById("Email").value;
+    var passwordUtente = document.getElementById("passwordUtente").value;
+    firebase.auth().signInWithEmailAndPassword(emailUtente, passwordUtente).catch(function (error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // [START_EXCLUDE]
+        if (errorCode === 'auth/wrong-password') {
+            alert('Wrong password.');
+        } else {
+            alert(error);
+        }
+        // [END_EXCLUDE]
+        //CONTINUO A MOSTRARE LA PAGINA
+        $('#login').modal('show');
+    });
+    if (firebase.auth().currentUser != null) {
+        console.log("ora tolgo tutto");
+       $('#login').modal('hide');
+    } else {
+        console.log("stronzo qualcosa di sbagliato");
+        $('#login').modal('show');
+    }
     
 }
 

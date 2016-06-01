@@ -44,22 +44,50 @@ function apriMenuRasp() {
 	
 	
 }
-
+//TODO SISTEMARE IL NOME UTENTE (PROB firebase bug)
 function registra() {
-	
-	if(/*registrazione effettuata correttamente*/ 1==1) {
-		
-		$('#successRegistration').modal('show');
-		
-	}
-	
-	else {
-		
-		$('#register').modal('show');
-	  
-        
-	}
-	
+    var nomeUtente = document.getElementById("nomeUtente").value;
+    var email = document.getElementById("emailRegistrazione").value;
+
+    var password = document.getElementById("passwordRegistrazione").value;
+    var confermaPassword = document.getElementById("confermaPasswordRegistrazione").value;
+
+    if (password === confermaPassword) {
+
+        firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // [START_EXCLUDE]
+            if (errorCode == 'auth/weak-password') {
+                alert('The password is too weak.');
+            } else {
+                alert("errore: " + error);
+            }
+            // [END_EXCLUDE]
+        });
+
+        var utenteCorrente = firebase.auth().currentUser;
+        //Aggiornamento firebase
+        if (utenteCorrente != null) {
+            var aggiornamentoNome = {}
+            aggiornamentoNome["/utenti/" + utenteCorrente.uid + "/rasp1"] = "";
+            firebase.database().ref().update(aggiornamentoNome);
+            aggiornamentoNome["/utenti/" + utenteCorrente.uid + "/rasp2"] = "";
+            firebase.database().ref().update(aggiornamentoNome);
+            //Update del nome utente
+            
+            utenteCorrente.updateProfile({
+                displayName: nomeUtente
+            });
+            
+            $('#successRegistration').modal('show');
+            $('#register').modal('hide');
+        } else {
+            $('#register').modal('show');
+        }
+    } else {
+        $('#register').modal('show');
+    }	
 }
 function apriFinestraLogin() {
     $('#login').modal('show');
@@ -80,10 +108,13 @@ function doLogin() {
         }
         // [END_EXCLUDE]
         //CONTINUO A MOSTRARE LA PAGINA
+
         $('#login').modal('show');
     });
     if (firebase.auth().currentUser != null) {
         console.log("ora tolgo tutto");
+        var titolo = document.getElementById("titoloVero");
+        titolo.innerHTML = " Aromatic - " + firebase.auth().currentUser.displayName;
        $('#login').modal('hide');
     } else {
         console.log("stronzo qualcosa di sbagliato");

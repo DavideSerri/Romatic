@@ -9,10 +9,6 @@ var config = {
 
 firebase.initializeApp(config);
 
-$(window).load(function(){
-        $('#myModal').modal('show');
-    });
-
 	
 //FINE COLLEGAMENTO AL DATABASE
 setInterval(cicloServer, 1000); //ripeto ciclicamente la funzione  per aggiornare i dati dal server

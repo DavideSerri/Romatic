@@ -85,7 +85,7 @@ function aggiungiID() {
     var utente = firebase.auth().currentUser;
     if (utente != null) {
         var ID = document.getElementById("idPrototipo").value;
-        controllaRasp(ID) //Controlla se l'ID è valido e lo aggiunge
+        controllaRasp(ID) //Controlla se l'ID Ã¨ valido e lo aggiunge
        
     } else {
         //Utente non loggato
@@ -93,7 +93,7 @@ function aggiungiID() {
     }
 }
 //Funzione che controlla l'esistenza dell'ID del raspberry da aggiungere
-//Return = false  se l'IDRasp non è valido
+//Return = false  se l'IDRasp non Ã¨ valido
 //Return = true   se il raspberyy Esiste
 function controllaRasp(IDRasp) {
 
@@ -154,8 +154,9 @@ function registra() {
             }
             // [END_EXCLUDE]
         });
-
-        var utenteCorrente = firebase.auth().currentUser;
+		setTimeout(function(){
+			
+		var utenteCorrente = firebase.auth().currentUser;
         //Aggiornamento firebase
         if (utenteCorrente != null) {
             var aggiornamentoNome = {}
@@ -173,7 +174,10 @@ function registra() {
             $('#register').modal('hide');
         } else {
             $('#register').modal('show');
-        }
+        }	
+			
+		},1000);
+        
     } else {
         $('#register').modal('show');
     }	

@@ -37,6 +37,8 @@ var apriLogin = document.getElementById("loginUtente");
     apriLogin.addEventListener("click",doLogin,false);
 var apriLogin2 = document.getElementById("apriLogin2");
     apriLogin2.addEventListener("click",apriFinestraLogin,false);
+	var apriLogin3 = document.getElementById("apriLogin");
+    apriLogin3.addEventListener("click",apriFinestraLogin,false);
 var addRasp = document.getElementById("addRasp");
     addRasp.addEventListener("click",apriAggiuntaPrototipo, false);
 	

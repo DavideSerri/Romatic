@@ -45,7 +45,17 @@ var firstPrototipo = document.getElementById("firstPrototipo");
 	firstPrototipo.addEventListener("click",function(){apriPanel(1)},false);
 var secondPrototipo = document.getElementById("secondPrototipo");
 	secondPrototipo.addEventListener("click",function(){apriPanel(2)},false);
+var profile = document.getElementById("profile");
+	profile.addEventListener("click",apriProfilo,false);
 	
+	
+	
+function apriProfilo() {
+	
+	$('#modalProfilo').modal('show');
+	
+	
+}	
 
 
 function apriPanel(numeroPrototipo) {

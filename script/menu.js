@@ -26,25 +26,35 @@ $(".flip").hover(function(){
 
 
 var apriRegistrazione = document.getElementById("openRegistration");
-    apriRegistrazione.addEventListener("click",openRegistration, false);
+    apriRegistrazione.addEventListener("click", openRegistration, false);
+
 var sendRegistration = document.getElementById("sendRegistration");
     sendRegistration.addEventListener("click",registra,false);
+
 var menuRasp = document.getElementById("selectRasp");
     menuRasp.addEventListener("click", apriMenuRasp, false);
+
 var logout = document.getElementById("logout");
     logout.addEventListener("click", doLogout, false);
+
 var apriLogin = document.getElementById("loginUtente");
     apriLogin.addEventListener("click",doLogin,false);
+
 var apriLogin2 = document.getElementById("apriLogin2");
     apriLogin2.addEventListener("click",apriFinestraLogin,false);
-	var apriLogin3 = document.getElementById("apriLogin");
+
+var apriLogin3 = document.getElementById("apriLogin");
     apriLogin3.addEventListener("click",apriFinestraLogin,false);
+
 var addRasp = document.getElementById("addRasp");
     addRasp.addEventListener("click",apriAggiuntaPrototipo, false);
+
 var firstPrototipo = document.getElementById("firstPrototipo");
 	firstPrototipo.addEventListener("click",function(){apriPanel(1)},false);
+
 var secondPrototipo = document.getElementById("secondPrototipo");
 	secondPrototipo.addEventListener("click",function(){apriPanel(2)},false);
+
 var profile = document.getElementById("profile");
 	profile.addEventListener("click",apriProfilo,false);
 	
@@ -64,12 +74,31 @@ function apriPanel(numeroPrototipo) {
 	localStorage.setItem("numeroPrototipo",numeroPrototipo);
 	
 }
-	
+//Funzione che apre il modulo per scegliere il raspberry	
 function apriMenuRasp() {
 	
 	$('#modalSelezionePrototipo').modal('show');
 	//*window.open("Panel.html");
-	
+	var nomePrototipoUno = document.getElementById("labelPrototipo1");
+	var nomePrototipoDue = document.getElementById("labelPrototipo2");
+	utente = firebase.auth().currentUser;
+	if (utente != null) {
+	    //Prendo i due ID
+	    firebase.database().ref("/utenti/"+utente.uid).once("value").then(function (snapshot) {
+	        //Controlli e output sul primo rasp
+	        if(snapshot.val().rasp1 != ""){
+	            nomePrototipoUno.innerHTML= "Prototipo 1: "+snapshot.val().rasp1;
+	        }else{
+	            nomePrototipoUno.innerHTML="Prototipo 1: Non Presente";
+	        }
+            //Controlli e output sul secondo rasp
+	        if(snapshot.val().rasp2 != ""){
+	            nomePrototipoDue.innerHTML= "Prototipo 2: "+snapshot.val().rasp2;
+	        }else{
+	            nomePrototipoDue.innerHTML="Prototipos 2: Non Presente";
+	        }
+	    });
+	}
 	
 }
 

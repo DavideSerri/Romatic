@@ -113,16 +113,20 @@ function controllaRasp(IDRasp) {
                             var update = {};
                             update["/utenti" + "/" + utente.uid + "/rasp1"] = IDRasp;
                             firebase.database().ref().update(update);
-                        } else if (snapshot.val().rasp2 != snapshot.val().rasp1) {
+                            alert("aggiunto");
+                            $('#modalPrototipo').modal('hide');
+                        } else if ((IDRasp != snapshot.val().rasp1) && (IDRasp != snapshot.val().rasp2)) {
                             var update = {};
                             update["/utenti" + "/" + utente.uid + "/rasp2"] = IDRasp;
                             firebase.database().ref().update(update);
+                            alert("aggiunto");
+                            $('#modalPrototipo').modal('hide');
                         } else {
-                            alert("Gia' esistente");
+                            alert("Rasp gia' esistente");
                         }
                     });
-                    alert("Aggiunto");
-					$('#modalPrototipo').modal('hide');
+                   
+					
                 } else {
                     alert("Raspberry non esistente");
                     //Raspberry non esistente!

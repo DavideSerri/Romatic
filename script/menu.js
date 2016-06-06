@@ -227,6 +227,8 @@ function openRegistration() {
 
 function doLogout() {
 	
+	firebase.auth().signOut();
+	
 	$('#login').modal('show');
 	
 	

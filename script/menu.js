@@ -59,14 +59,52 @@ var profile = document.getElementById("profile");
 	profile.addEventListener("click",apriProfilo,false);
 	
 	
-	
+//Funzione che permette all'utente di modificare le sue informazioni	
 function apriProfilo() {
 	
-	$('#modalProfilo').modal('show');
-	
-	
-}	
+    $('#modalProfilo').modal('show');
 
+	var bottoneModificaNome = document.getElementById("modificaNomeUtente");
+	    bottoneModificaNome.addEventListener("click", modificaNomeUtente, false);
+	var bottoneModificaPassword = document.getElementById("modificaPassword");
+	    bottoneModificaPassword.addEventListener("click", modificaPassword, false);
+	var bottoneModificaEmail = document.getElementById("modificaEmail");
+	    bottoneModificaEmail.addEventListener("click", modificaEmailUtente, false);
+	
+}
+//Funzione che modifica la mail
+function modificaEmailUtente() {
+    var email = prompt("Inserisci la nuova email");
+    utenteCorrente = firebase.auth().currentUser;
+    utenteCorrente.updateEmail(email).then(function () {
+        alert("caricamento della nuova mail corretto");
+    }, function (error) {
+        alert(error);
+    });
+
+}
+//Funzione per la modifica della password
+function modificaPassword() {
+    var password = prompt("Inserisci la nuova password");
+    utente = firebase.auth().currentUser;
+    utente.updatePassword(password).then(function () {
+        alert("Password caricata bene :-) ");
+    }, function (error) {
+        alert(error);
+    });
+}
+//Funzione per il cambio nome utente
+function modificaNomeUtente() {
+    var nomeNuovo = prompt("Inserisci il tuo nuovo nome utente");
+    utente = firebase.auth().currentUser;
+    utente.updateProfile({
+        displayName:nomeNuovo
+    });
+    setTimeout(function () {
+        var titolo = document.getElementById("titoloVero");       
+        titolo.innerHTML = " Aromatic - " + firebase.auth().currentUser.displayName;
+    }, 1000);
+}
 
 function apriPanel(numeroPrototipo) {
 	
@@ -169,7 +207,7 @@ function controllaRasp(IDRasp) {
 }
 
 
-//TODO SISTEMARE IL NOME UTENTE (PROB firebase bug)
+
 function registra() {
     var nomeUtente = document.getElementById("nomeUtente").value;
     var email = document.getElementById("emailRegistrazione").value;

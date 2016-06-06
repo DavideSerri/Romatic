@@ -8,10 +8,9 @@ var config = {
 };
 
 firebase.initializeApp(config);
-
-	
 //FINE COLLEGAMENTO AL DATABASE
 setInterval(cicloServer, 1000); //ripeto ciclicamente la funzione  per aggiornare i dati dal server
+
 function cicloServer() {
     
     caricaLuminosita(); //output del valore della luminosità dei led

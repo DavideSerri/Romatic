@@ -118,10 +118,11 @@ function controllaRasp(IDRasp) {
                             update["/utenti" + "/" + utente.uid + "/rasp2"] = IDRasp;
                             firebase.database().ref().update(update);
                         } else {
-                            alert("Già esistente");
+                            alert("Gia' esistente");
                         }
                     });
                     alert("Aggiunto");
+					$('#modalPrototipo').modal('hide');
                 } else {
                     alert("Raspberry non esistente");
                     //Raspberry non esistente!

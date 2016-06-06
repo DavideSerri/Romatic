@@ -108,8 +108,31 @@ function modificaNomeUtente() {
 
 function apriPanel(numeroPrototipo) {
 	
-	window.open("Panel.html");
-	localStorage.setItem("numeroPrototipo",numeroPrototipo);
+	
+	
+	if (utente != null) {
+	    //Prendo i due ID
+	    firebase.database().ref("/utenti/"+utente.uid).once("value").then(function (snapshot) {
+	        //Controlli e output sul primo rasp
+			
+			if (numeroPrototipo==1) {
+	        if(snapshot.val().rasp1 != ""){
+	            window.localStorage.setItem("numeroPrototipo",snapshot.val().rasp1);
+				window.open("Panel.html","_self");
+	        }
+			}
+			else {
+				
+				if(snapshot.val().rasp2 != ""){
+	            window.localStorage.setItem("numeroPrototipo",snapshot.val().rasp2);
+				window.open("Panel.html","_self");
+	        }
+				
+			}
+	
+	});
+	}
+
 	
 }
 //Funzione che apre il modulo per scegliere il raspberry	

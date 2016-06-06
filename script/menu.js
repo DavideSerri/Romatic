@@ -113,10 +113,12 @@ function controllaRasp(IDRasp) {
                             var update = {};
                             update["/utenti" + "/" + utente.uid + "/rasp1"] = IDRasp;
                             firebase.database().ref().update(update);
-                        } else {
+                        } else if (snapshot.val().rasp2 != snapshot.val().rasp1) {
                             var update = {};
                             update["/utenti" + "/" + utente.uid + "/rasp2"] = IDRasp;
                             firebase.database().ref().update(update);
+                        } else {
+                            alert("Già esistente");
                         }
                     });
                     alert("Aggiunto");

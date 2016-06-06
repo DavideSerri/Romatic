@@ -207,7 +207,9 @@ function doLogin() {
 
         $('#login').modal('show');
     });
-    if (firebase.auth().currentUser != null) {
+	setTimeout(function(){
+		
+		if (firebase.auth().currentUser != null) {
         console.log("ora tolgo tutto");
         var titolo = document.getElementById("titoloVero");
         titolo.innerHTML = " Aromatic - " + firebase.auth().currentUser.displayName;
@@ -216,6 +218,9 @@ function doLogin() {
         console.log("stronzo qualcosa di sbagliato");
         $('#login').modal('show');
     }
+		
+	},1000);
+    
     
 }
 

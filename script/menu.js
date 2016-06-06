@@ -75,9 +75,63 @@ function apriMenuRasp() {
 
 function apriAggiuntaPrototipo() {
 	
-	$('#modalPrototipo').modal('show');
+    $('#modalPrototipo').modal('show');
+    var bottoneAggiuntaPrototipo = document.getElementById("aggiungiPrototipo");
+        bottoneAggiuntaPrototipo.addEventListener("click", aggiungiID, false);
 		
 }
+//Funzione che collega il prototipo all'utente
+function aggiungiID() {
+    var utente = firebase.auth().currentUser;
+    if (utente != null) {
+        var ID = document.getElementById("idPrototipo").value;
+        controllaRasp(ID) //Controlla se l'ID è valido e lo aggiunge
+       
+    } else {
+        //Utente non loggato
+        alert("Utente non loggato >:/");
+    }
+}
+//Funzione che controlla l'esistenza dell'ID del raspberry da aggiungere
+//Return = false  se l'IDRasp non è valido
+//Return = true   se il raspberyy Esiste
+function controllaRasp(IDRasp) {
+
+    if (IDRasp == "") {
+        //ID non valido di conseguenza raspberry non esistente
+     
+    } else {
+        var utente = firebase.auth().currentUser;
+        if (utente == null) {
+            alert("Utente Non Loggato!");
+        } else {
+            firebase.database().ref("/raspberry/\"" + IDRasp + "\"/Serbatoio").once("value").then(function (snapshot) {
+                if (snapshot.val() != null) {
+                    //Raspberry Esistente!  Quindi lo aggiungo //Entro nel campo utente
+                    firebase.database().ref("/utenti/" + utente.uid).once("value").then(function (snapshot) {
+                        if (snapshot.val().rasp1 == "") {
+                            var update = {};
+                            update["/utenti" + "/" + utente.uid + "/rasp1"] = IDRasp;
+                            firebase.database().ref().update(update);
+                        } else {
+                            var update = {};
+                            update["/utenti" + "/" + utente.uid + "/rasp2"] = IDRasp;
+                            firebase.database().ref().update(update);
+                        }
+                    });
+                    alert("Aggiunto");
+                } else {
+                    alert("Raspberry non esistente");
+                    //Raspberry non esistente!
+                }
+            });
+        }
+
+    }
+    
+
+}
+
 
 //TODO SISTEMARE IL NOME UTENTE (PROB firebase bug)
 function registra() {

@@ -41,11 +41,24 @@ var apriLogin2 = document.getElementById("apriLogin2");
     apriLogin3.addEventListener("click",apriFinestraLogin,false);
 var addRasp = document.getElementById("addRasp");
     addRasp.addEventListener("click",apriAggiuntaPrototipo, false);
+var firstPrototipo = document.getElementById("firstPrototipo");
+	firstPrototipo.addEventListener("click",function(){apriPanel(1)},false);
+var secondPrototipo = document.getElementById("secondPrototipo");
+	secondPrototipo.addEventListener("click",function(){apriPanel(2)},false);
 	
+
+
+function apriPanel(numeroPrototipo) {
+	
+	window.open("Panel.html");
+	localStorage.setItem("numeroPrototipo",numeroPrototipo);
+	
+}
 	
 function apriMenuRasp() {
 	
-	window.open("Panel.html");
+	$('#modalSelezionePrototipo').modal('show');
+	//*window.open("Panel.html");
 	
 	
 }

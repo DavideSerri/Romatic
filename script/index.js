@@ -13,6 +13,8 @@ setInterval(cicloServer, 1000); //ripeto ciclicamente la funzione  per aggiornar
 
 function cicloServer() {
     
+	
+	alert("il numero del prototipo e': "+localStorage.getItem("numeroPrototipo"));
     caricaLuminosita(); //output del valore della luminosità dei led
     outputAccensione(); //output del valore on/off dei led
     outputSogliaMinimaAttuale();

@@ -5,7 +5,7 @@ function outputAutomatismi() {
 	var bottonePompa2 = document.getElementById("motore");
 	var labelLuce = document.getElementById("label-interruttore");
 	var labelPompa = document.getElementById("label-motore");
-    firebase.database().ref("luci").once("value").then(function (snapshot) {
+    firebase.database().ref("/raspberry/\"" + numeroPrototipo + "\"/luci").once("value").then(function (snapshot) {
        
         if (snapshot.val().automatico) {
             bottoneLuce.checked=true;
@@ -17,7 +17,7 @@ function outputAutomatismi() {
 			bottoneLuce2.disabled = false;
         }
     });
-    firebase.database().ref("serbatoio").once("value").then(function (snapshot) {
+    firebase.database().ref("/raspberry/\"" + numeroPrototipo + "\"/serbatoio").once("value").then(function (snapshot) {
         
         if (snapshot.val().automatico) {
             
@@ -48,16 +48,16 @@ function cambioAutomaticoLuce() {
     cambio = {};
 	var bottoneLuce2 = document.getElementById("interruttore");
 	var labelLuce = document.getElementById("label-interruttore");
-    firebase.database().ref("luci").once("value").then(function (snapshot) { 
+    firebase.database().ref("/raspberry/\"" + numeroPrototipo + "\"/luci").once("value").then(function (snapshot) { 
     if (snapshot.val().automatico) {
         
         cambio["automatico"] = false;
-        firebase.database().ref("luci").update(cambio);
+        firebase.database().ref("/raspberry/\"" + numeroPrototipo + "\"/luci").update(cambio);
 		labelLuce.removeEventListener("click", allerta, false );
 		bottoneLuce2.disabled = false;
     } else {       
         cambio["automatico"] = true;    
-        firebase.database().ref("luci").update(cambio);
+        firebase.database().ref("/raspberry/\"" + numeroPrototipo + "\"/luci").update(cambio);
 		labelLuce.addEventListener("click", allerta , false );
 		bottoneLuce2.disabled = true;
     } 
@@ -68,16 +68,16 @@ function cambioAutomaticoPompa() {
 	var bottonePompa2 = document.getElementById("motore");
 	var labelPompa = document.getElementById("label-motore");
     cambio = {};
-    firebase.database().ref("serbatoio").once("value").then(function (snapshot) {
+    firebase.database().ref("/raspberry/\"" + numeroPrototipo + "\"/serbatoio").once("value").then(function (snapshot) {
         if (snapshot.val().automatico) {
 
             cambio["automatico"] = false;
-            firebase.database().ref("serbatoio").update(cambio);
+            firebase.database().ref("/raspberry/\"" + numeroPrototipo + "\"/serbatoio").update(cambio);
 			labelPompa.removeEventListener("click", allerta, false );
 			bottonePompa2.disabled = false;
         } else {
             cambio["automatico"] = true;
-            firebase.database().ref("serbatoio").update(cambio);
+            firebase.database().ref("/raspberry/\"" + numeroPrototipo + "\"/serbatoio").update(cambio);
 			labelPompa.addEventListener("click", allerta, false );
 			bottonePompa2.disabled = true;
         }

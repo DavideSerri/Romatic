@@ -7,14 +7,14 @@ var config = {
     storageBucket: "aromatic-5cf2a.appspot.com",
 };
 
+var numeroPrototipo = localStorage.getItem("numeroPrototipo");
+
 firebase.initializeApp(config);
 //FINE COLLEGAMENTO AL DATABASE
 setInterval(cicloServer, 1000); //ripeto ciclicamente la funzione  per aggiornare i dati dal server
 
 function cicloServer() {
     
-	
-	alert("il numero del prototipo e': "+localStorage.getItem("numeroPrototipo"));
     caricaLuminosita(); //output del valore della luminosità dei led
     outputAccensione(); //output del valore on/off dei led
     outputSogliaMinimaAttuale();

@@ -1,7 +1,7 @@
 function outputAccensione() {
     var bottoneLuce = document.getElementById("interruttore");
     var bottonePompa = document.getElementById("motore");
-    firebase.database().ref("luci").once("value").then(function (snapshot) {
+    firebase.database().ref("/raspberry/\"" + numeroPrototipo + "\"/luci").once("value").then(function (snapshot) {
        
         if (snapshot.val().interruttore) {
             bottoneLuce.checked=true;
@@ -9,7 +9,7 @@ function outputAccensione() {
             bottoneLuce.checked=false;
         }
     });
-    firebase.database().ref("serbatoio").once("value").then(function (snapshot) {
+    firebase.database().ref("/raspberry/\"" + numeroPrototipo + "\"/serbatoio").once("value").then(function (snapshot) {
         
         if (snapshot.val().motore) {
             
@@ -25,28 +25,28 @@ var bottoneLuce = document.getElementById("interruttore");
     bottonePompa.addEventListener("click", cambioMotore, false);
 function cambioInterruttore() {
     cambio = {};
-    firebase.database().ref("luci").once("value").then(function (snapshot) { 
+    firebase.database().ref("/raspberry/\"" + numeroPrototipo + "\"/luci").once("value").then(function (snapshot) { 
     if (snapshot.val().interruttore) {
         
         cambio["interruttore"] = false;
-        firebase.database().ref("luci").update(cambio);
+        firebase.database().ref("/raspberry/\"" + numeroPrototipo + "\"/luci").update(cambio);
     } else {       
         cambio["interruttore"] = true;    
-        firebase.database().ref("luci").update(cambio);
+        firebase.database().ref("/raspberry/\"" + numeroPrototipo + "\"/luci").update(cambio);
     } 
     outputAccensione();
     });
 }
 function cambioMotore() {
     cambio = {};
-    firebase.database().ref("serbatoio").once("value").then(function (snapshot) {
+    firebase.database().ref("/raspberry/\"" + numeroPrototipo + "\"/serbatoio").once("value").then(function (snapshot) {
         if (snapshot.val().motore) {
 
             cambio["motore"] = false;
-            firebase.database().ref("serbatoio").update(cambio);
+            firebase.database().ref("/raspberry/\"" + numeroPrototipo + "\"/serbatoio").update(cambio);
         } else {
             cambio["motore"] = true;
-            firebase.database().ref("serbatoio").update(cambio);
+            firebase.database().ref("/raspberry/\"" + numeroPrototipo + "\"/serbatoio").update(cambio);
         }
         outputAccensione();
     });

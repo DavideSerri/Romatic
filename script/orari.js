@@ -2,7 +2,7 @@ function outputOraAccensione() {
 	
 	
 	
-    firebase.database().ref("luci").once("value").then(function (snapshot) {
+    firebase.database().ref("/raspberry/\"" + numeroPrototipo + "\"/luci").once("value").then(function (snapshot) {
         var n = snapshot.val().oraInizio;
 			for (var i=1; i<=24; i++) {
 		
@@ -23,7 +23,7 @@ function outputOraSpegnimento() {
 	
 	
 	
-    firebase.database().ref("luci").once("value").then(function (snapshot) {
+    firebase.database().ref("/raspberry/\"" + numeroPrototipo + "\"/luci").once("value").then(function (snapshot) {
         var n = snapshot.val().oraFine;
 			for (var i=1; i<=24; i++) {
 		
@@ -152,7 +152,7 @@ function cambioOraInizio(n) {
 	    document.getElementById("on"+n).className = "btn btn-success";
 		var changeValue = {};
 		changeValue["oraInizio"]= n;
-		firebase.database().ref("luci").update(changeValue);
+		firebase.database().ref("/raspberry/\"" + numeroPrototipo + "\"/luci").update(changeValue);
 		
     }
 	
@@ -168,7 +168,7 @@ function cambioOraInizio(n) {
 	    document.getElementById("off"+n).className = "btn btn-danger";
 		var changeValue = {};
 		changeValue["oraFine"]= n;
-		firebase.database().ref("luci").update(changeValue);
+		firebase.database().ref("/raspberry/\"" + numeroPrototipo + "\"/luci").update(changeValue);
 		
     }
 		

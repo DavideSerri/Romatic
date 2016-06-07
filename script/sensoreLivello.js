@@ -1,7 +1,7 @@
 
 function outputLivelloAcqua() {
     var outputLivello = document.getElementById("sensoreLivello");
-    firebase.database().ref("serbatoio").once("value").then(function (snapshot) {
+    firebase.database().ref("/raspberry/\"" + numeroPrototipo + "\"/serbatoio").once("value").then(function (snapshot) {
 		if (snapshot.val().sensoreLivello <= 10) {
 			
 		outputLivello.innerHTML = "<span class='glyphicon glyphicon-warning-sign' aria-hidden='true'></span>"+" Ricarica Serbatoio!";	

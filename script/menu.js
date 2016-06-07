@@ -177,12 +177,20 @@ function controllaRasp(IDRasp) {
                     //Raspberry Esistente!  Quindi lo aggiungo //Entro nel campo utente
                     firebase.database().ref("/utenti/" + utente.uid).once("value").then(function (snapshot) {
                         if (snapshot.val().rasp1 == "") {
+                            //Aggiunta della mail dell'utente nell'apposito campo mailUtente del raspberry
+                            //Aggiunta dell'ID del Rasp nel campo dell'utente
+                            var updateMail = {}
+                            updateMail["/raspberry/\"" + IDRasp + "\"/mailUtente"] = utente.email;
+                            firebase.database().ref().update(updateMail);
                             var update = {};
                             update["/utenti" + "/" + utente.uid + "/rasp1"] = IDRasp;
                             firebase.database().ref().update(update);
                             alert("aggiunto");
                             $('#modalPrototipo').modal('hide');
                         } else if ((IDRasp != snapshot.val().rasp1) && (IDRasp != snapshot.val().rasp2)) {
+                            var updateMail = {}
+                            updateMail["/raspberry/\"" + IDRasp + "\"/mailUtente"] = utente.email;
+                            firebase.database().ref().update(updateMail);
                             var update = {};
                             update["/utenti" + "/" + utente.uid + "/rasp2"] = IDRasp;
                             firebase.database().ref().update(update);

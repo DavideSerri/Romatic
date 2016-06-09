@@ -195,7 +195,7 @@ function controllaRasp(IDRasp) {
         if (utente == null) {
             alert("Utente Non Loggato!");
         } else {
-            firebase.database().ref("/raspberry/\"" + IDRasp + "\"/Serbatoio").once("value").then(function (snapshot) {
+            firebase.database().ref("/raspberry/\"" + IDRasp + "\"/serbatoio").once("value").then(function (snapshot) {
                 if (snapshot.val() != null) {
                     //Raspberry Esistente!  Quindi lo aggiungo //Entro nel campo utente
                     firebase.database().ref("/utenti/" + utente.uid).once("value").then(function (snapshot) {

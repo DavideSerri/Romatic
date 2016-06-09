@@ -1,3 +1,6 @@
+/*
+-Script per la gestione degli orari di accensione e spegnimento delle luci
+*/
 function outputOraAccensione() {
 	
 	

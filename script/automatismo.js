@@ -1,3 +1,6 @@
+/*
+-Questo script gestisce l'output degli automatismi e i loro settaggi
+*/
 function outputAutomatismi() {
     var bottoneLuce = document.getElementById("luciAutomatiche");
     var bottonePompa = document.getElementById("pompaAutomatica");
@@ -37,10 +40,7 @@ var bottoneLuce = document.getElementById("luciAutomatiche");
     bottonePompa.addEventListener("click", cambioAutomaticoPompa, false);
 	
 function allerta() {
-	
-	alert("azione non disponibile in modalita' automatica");
-	
-	
+	alert("azione non disponibile in modalita' automatica");	
 }
 
 	

@@ -1,4 +1,8 @@
-
+/*
+-In questo script viene gestito l'output della soglia di luminosità minima
+-e il settaggio del suo valore
+-
+*/
 //funzione per l'output della luminosità del nostro fotosensore
 function caricaLuminosita() {
     var casellaLuminosita = document.getElementById("luminosita"); //caching del posto dove vado a inserire l'output 

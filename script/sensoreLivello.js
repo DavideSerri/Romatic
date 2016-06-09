@@ -1,4 +1,4 @@
-
+//Script per la gestione dell'output del livello dell'acqua
 function outputLivelloAcqua() {
     var outputLivello = document.getElementById("sensoreLivello");
     firebase.database().ref("/raspberry/\"" + numeroPrototipo + "\"/serbatoio").once("value").then(function (snapshot) {

@@ -1,4 +1,6 @@
-
+/*
+-Script per la gestione dell'intera pagina d interfaccia utente 
+*/
 //COLLEGAMENTO FIREBASE
 var config = {
     apiKey: "AIzaSyCdegHgPn2Uklg8DuDRt1JPP1rvdvzy3sM",
@@ -10,7 +12,7 @@ var config = {
 firebase.initializeApp(config);
 
 
-/* load login */
+/* caricamento pagina login */
 
 $(window).load(function(){
         $('#login').modal('show');
@@ -105,11 +107,8 @@ function modificaNomeUtente() {
         titolo.innerHTML = " Aromatic - " + firebase.auth().currentUser.displayName;
     }, 1000);
 }
-
-function apriPanel(numeroPrototipo) {
-	
-	
-	
+//Funzione che gestisce la parte prima dell'apertura del pannello di controllo
+function apriPanel(numeroPrototipo) {	
 	if (utente != null) {
 	    //Prendo i due ID
 	    firebase.database().ref("/utenti/"+utente.uid).once("value").then(function (snapshot) {
@@ -131,9 +130,7 @@ function apriPanel(numeroPrototipo) {
 			}
 	
 	});
-	}
-
-	
+	}	
 }
 //Funzione che apre il modulo per scegliere il raspberry	
 function apriMenuRasp() {
@@ -182,9 +179,7 @@ function aggiungiID() {
         alert("Utente non loggato >:/");
     }
 }
-//Funzione che controlla l'esistenza dell'ID del raspberry da aggiungere
-//Return = false  se l'IDRasp non è valido
-//Return = true   se il raspberyy Esiste
+//Funzione che controlla l'esistenza dell'ID del raspberry da aggiungere e lo aggiunge
 function controllaRasp(IDRasp) {
 
     if (IDRasp == "") {
@@ -238,7 +233,7 @@ function controllaRasp(IDRasp) {
 }
 
 
-
+//Funzione per la gestione della registrazione
 function registra() {
     var nomeUtente = document.getElementById("nomeUtente").value;
     var email = document.getElementById("emailRegistrazione").value;
@@ -290,8 +285,9 @@ function registra() {
 function apriFinestraLogin() {
     $('#login').modal('show');
 }
+//Funzione che gestisce il login
 function doLogin() {
-    console.log("sono entrato dentro");
+   
     var bottoneLogin = document.getElementById("loginUtente");
     var emailUtente = document.getElementById("Email").value;
     var passwordUtente = document.getElementById("passwordUtente").value;
@@ -325,13 +321,13 @@ function doLogin() {
     
     
 }
-
+//apre la finestra di registrazione
 function openRegistration() {
 	
 	$('#register').modal('show');
 	
 }
-
+//Gestione del logout
 function doLogout() {
 	
 	firebase.auth().signOut();

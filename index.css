@@ -19,7 +19,14 @@ span {
 	
 	
 }
-
+#Div_Logo{
+    position:relative;
+    z-index:50;
+}
+#Logo{
+    text-align:center;
+  
+}
 h3 {
 	
 	text-align:center;

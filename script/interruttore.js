@@ -1,3 +1,6 @@
+/*
+-Questo script gestisce gli interruttori
+*/
 function outputAccensione() {
     var bottoneLuce = document.getElementById("interruttore");
     var bottonePompa = document.getElementById("motore");

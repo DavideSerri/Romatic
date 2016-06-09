@@ -1,3 +1,6 @@
+/*
+    Questo script gestisce la durata di accensione e spegnimento della pompa
+*/
 function outputDurataAccensionePompa() {
     var outputAccensionePompa = document.getElementById("accensionePompa");
     var outputSpegnimentoPompa = document.getElementById("spegnimentoPompa");
